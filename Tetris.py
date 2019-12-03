@@ -41,7 +41,7 @@ colors = [
 cellSize = 18
 cols = 10
 rows = 22
-maxfps = 30
+maxfps = 60
 
 
 def rotateClockwise(shape):
