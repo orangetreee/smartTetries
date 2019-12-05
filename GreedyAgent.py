@@ -17,8 +17,9 @@ class Greedy(object):
         f3 = self.getHoles()
         f4 = self.getDeltas()
 
-        score = 0.760666 * f0 - 0.510066 * f1 - 0.35663 * f3 - 0.184483 * f4
+        # score = 0.760666 * f0 - 0.510066 * f1 - 0.35663 * f3 - 0.184483 * f4
         # score = f0 - f1 - f2 - f3 - f4
+        score = f0 * 2 - f1 * 3 - f2 * 3 - f3 * 4 - f4
         return score
 
     def getHeights(self):
