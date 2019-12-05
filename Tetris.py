@@ -1,5 +1,5 @@
 from tkinter import *
-from time import sleep
+import time
 from random import randrange as rand
 import pygame, sys
 
@@ -28,20 +28,20 @@ shape = [
 ]
 
 colors = [
-    (0,   0,   0),
-    (255, 85,  85),
-    (100, 200, 115),
-    (120, 108, 245),
-    (255, 140, 50),
-    (50,  120, 52),
-    (146, 202, 73),
-    (150, 161, 218),
-    (35,  35,  35)
+    (0,   0, 0),
+    (255, 0, 0),
+    (255, 215, 0),
+    (173,255,47),
+    (128, 0, 128),
+    (0,   0, 255),
+    (0,   128, 0),
+    (255, 192, 203),
+    (152, 125, 89)
 ]
-cellSize = 18
+cellSize = 33
 cols = 10
 rows = 22
-maxfps = 60
+maxfps = 30
 
 
 def rotateClockwise(shape):
@@ -88,9 +88,11 @@ class TetrisApp(object):
         self.height = cellSize*rows
         self.rlim = cellSize*cols
         self.bgroundGrid = [[8 if x % 2 == y % 2 else 0 for x in range(cols)] for y in range(rows)]
-        self.defaultFont = pygame.font.Font(pygame.font.get_default_font(), 12)
+
+        self.defaultFont = pygame.font.Font(pygame.font.get_default_font(), 20)
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.event.set_blocked(pygame.MOUSEMOTION)
+        self.nextStone = shape[rand(len(shape))]
         self.nextStone = shape[rand(len(shape))]
         self.init_game()
 
@@ -137,10 +139,11 @@ class TetrisApp(object):
         for y, row in enumerate(matrix):
             for x, val in enumerate(row):
                 if val:
-                    pygame.draw.rect(self.screen, colors[val], pygame.Rect((offX + x)*cellSize,
-                                                                           (offY + y)*cellSize,
-                                                                           cellSize,
-                                                                           cellSize), 0)
+                    #pygame.draw.rect(self.screen, (0, 0, 0), Rect((100, 100), (130, 170)))
+                    pygame.draw.rect(self.screen, colors[val], pygame.Rect((offX + x)*cellSize +1,
+                                                                           (offY + y)*cellSize +1,
+                                                                           cellSize - 1,
+                                                                           cellSize - 1), 0)
 
     def addClLines(self, n):
         scores = [0, 40, 100, 300, 1200]
@@ -220,16 +223,19 @@ class TetrisApp(object):
         while 1:
             self.screen.fill((0, 0, 0))
             if self.gameOver:
-                self.centerMesg("Game Over\nScore: %d\nPress Space to Continue" % self.score)
+                self.centerMesg("Game Over\nScore: %d\n" % self.score)
             else:
                 pygame.draw.line(self.screen,
                                   (255, 255, 255),
+                                   # (0,0,0),
                                   (self.rlim+1, 0),
                                   (self.rlim+1, self.height-1))
                 self.dispMesg("Next:", (self.rlim+cellSize, 2))
-                self.dispMesg("Score: %d\nLevel: %d\nLines: %d" % (self.score, self.level, self.lines),
-                              (self.rlim+cellSize, cellSize*5))
-                self.drawMatrix(self.bgroundGrid, (0, 0))
+                self.dispMesg("Score:\n\n\n %d\n\n\n\n\nLevel: %d\n\n\n\n\nLines: %d" % (self.score, self.level, self.lines),
+                              (self.rlim+ 0.2 *cellSize, cellSize*5))
+                pygame.draw.rect(self.screen, (255,255,255), ((0, 0),
+                                  (self.width - 6*33, self.height-1)), 0)
+                #self.drawMatrix(self.bgroundGrid, (0, 0))
                 self.drawMatrix(self.board, (0, 0))
                 self.drawMatrix(self.stone, (self.stoneX, self.stoneY))
                 self.drawMatrix(self.nextStone, (cols+1, 2))
@@ -248,7 +254,7 @@ class TetrisApp(object):
             deceleration.tick(maxfps)
 
     def bestMoves(self):
-        self.instantDrop()
+        self.drop(True)
 
 if __name__ == '__main__':
     App = TetrisApp()
