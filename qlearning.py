@@ -24,9 +24,7 @@ class QLearning(object):
         f3 = self.getHoles()
         f4 = self.getDeltas()
 
-        score = 1/weights[0]*f0 - 1/weights[1]*f1 - \
-                1/weights[2]*f2 - 1/weights[3]*f3 - \
-                1/weights[4]*f4
+        score = -0.520162*f1 + 0.771727*f0 - 0.36483*f3 - 0.183434*f4
         return score
 
     def getHeight(self):
