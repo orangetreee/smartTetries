@@ -2,10 +2,11 @@ import copy
 
 
 def newBoard():
-    board = [[0 for x in range(COLS)]
-             for y in range(ROWS)]
-    board += [[1 for x in range(COLS)]]
+    board = [[0 for _ in range(COLS)]
+             for __ in range(ROWS)]
+    board += [[1 for _ in range(COLS)]]
     return board
+
 
 class State(object):
     def __init__(self, board, score, block, nextBlock):
@@ -63,9 +64,9 @@ class State(object):
         self.newScore = lineScores[n]
 
     def nextState(self, action):
-        rotateN, x = action
+        rotate, x = action
         newStates = []
-        block = self.rotate(self.block, rotateN)
+        block = self.rotate(self.block, rotate)
         if not self.checkCollision(block, (x, 0)):
             newBoard = self.drop(block, x)
             newScore = self.newScore

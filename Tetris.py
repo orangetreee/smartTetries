@@ -211,7 +211,7 @@ class TetrisApp(object):
             'DOWN': lambda: self.drop(True),
             'UP': self.rotateStone,
             'p': self.togglePaused,
-            'SPACE': self.startGame(),
+            'SPACE': self.startGame,
             'RETURN': self.instantDrop()
         }
 
@@ -254,7 +254,7 @@ class TetrisApp(object):
             deceleration.tick(maxfps)
 
     def bestMoves(self):
-        self.drop(True)
+        self.instantDrop()
 
 if __name__ == '__main__':
     App = TetrisApp()
