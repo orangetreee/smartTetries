@@ -22,9 +22,11 @@ class QLearning(object):
         f1 = self.getTotalHeight()
         f2 = self.getMaxHeight()
         f3 = self.getHoles()
-        f4 = self.getDeltas()
+        f4 = self.bumpiness()
 
-        score = -0.520162*f1 + 0.771727*f0 - 0.36483*f3 - 0.183434*f4
+        # score = -0.520162*f1 + 0.771727*f0 - 0.36483*f3 - 0.183434*f4
+        score = weights[0]*f0 - weights[1]*f1 - weights[3]*f3 - weights[4]*f4
+        # print(score)
         return score
 
     def getHeight(self):
@@ -50,19 +52,19 @@ class QLearning(object):
         else:
             return 0
 
-    def getDeltas(self):
-        res = 0
+    def bumpiness(self):
+        sum = 0
         for i, j in enumerate(self.heights):
             if i:
-                res += abs(self.heights[i] - self.heights[i-1])
-        return res
+                sum += abs(self.heights[i] - self.heights[i-1])
+        return sum
 
     def getHoles(self):
         res = 0
-        for x in range(COLS):
+        for i in range(COLS):
             flag = False
-            for y in range(ROWS):
-                if self.board[y][x]:
+            for j in range(ROWS):
+                if self.board[j][i] != 0:
                     flag = True
                 elif flag:
                     res += 1

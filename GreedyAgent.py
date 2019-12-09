@@ -15,11 +15,12 @@ class Greedy(object):
         f1 = self.getTotalHeight()
         f2 = self.getMaxHeight()
         f3 = self.getHoles()
-        f4 = self.getDeltas()
+        f4 = self.bumpiness()
 
-        # score = 0.760666 * f0 - 0.510066 * f1 - 0.35663 * f3 - 0.184483 * f4
+        score = 0.760666 * f0 - 0.510066 * f1 - 0.35663 * f3 - 0.184483 * f4
         # score = f0 - f1 - f2 - f3 - f4
-        score = f0 * 2 - f1 * 3 - f2 * 3 - f3 * 4 - f4
+        # score = f0 * 4 - f1 * 3 - f2 * 3 - f3 * 2 - f4
+        # score = -0.520162 * f1 + 0.771727 * f0 - 0.36483 * f3 - 0.183434 * f4
         return score
 
     def getHeights(self):
@@ -41,12 +42,12 @@ class Greedy(object):
     def getLinesCleaned(self):
         return ([0, 40, 100, 300, 1200]).index(self.lineScore)
 
-    def getDeltas(self):
-        res = 0
+    def bumpiness(self):
+        sum = 0
         for i, h in enumerate(self.heights):
             if i:
-                res += abs(self.heights[i] - self.heights[i - 1])
-        return res
+                sum += abs(self.heights[i] - self.heights[i - 1])
+        return sum
 
     def getHoles(self):
         res = 0
