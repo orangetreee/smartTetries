@@ -4,7 +4,7 @@
     <list default="true" id="7f1ba76c-ed12-4288-b2c4-54d442d74048" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GreedyAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/GreedyAgent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qlearning.py" beforeDir="false" afterPath="$PROJECT_DIR$/qlearning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tetris.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tetris.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +17,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tetris.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
+            <state relative-caret-position="631">
               <caret line="98" column="16" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="16" />
             </state>
           </provider>
@@ -26,7 +26,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
+            <state relative-caret-position="600">
               <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
             </state>
           </provider>
@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GreedyAgent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            <state relative-caret-position="343">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -48,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/qlearning.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="71" />
+              <caret line="26" column="71" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="71" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -91,9 +91,12 @@
       <find>bumpiness\</find>
       <find>bumpiness</find>
       <find>print</find>
+      <find>sleep</find>
+      <find>400</find>
     </findStrings>
     <replaceStrings>
       <replace>bumpiness</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -105,8 +108,8 @@
         <option value="$PROJECT_DIR$/tetris.py" />
         <option value="$PROJECT_DIR$/MiniHeight.py" />
         <option value="$PROJECT_DIR$/state.py" />
-        <option value="$PROJECT_DIR$/Tetris.py" />
         <option value="$PROJECT_DIR$/qlearning.py" />
+        <option value="$PROJECT_DIR$/Tetris.py" />
         <option value="$PROJECT_DIR$/GreedyAgent.py" />
       </list>
     </option>
@@ -123,10 +126,23 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="smartTetries" type="b2602c69:ProjectViewProjectNode" />
+              <item name="smartTetries" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../prj_supplement/SmartTetris-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -280,10 +296,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.GreedyAgent" />
+        <item itemvalue="Python.MiniHeight" />
         <item itemvalue="Python.qlearning" />
         <item itemvalue="Python.Tetris" />
         <item itemvalue="Python.state" />
-        <item itemvalue="Python.MiniHeight" />
       </list>
     </recent_temporary>
   </component>
@@ -304,13 +320,13 @@
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.091675445" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20940171" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21686748" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4037199" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4030668" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -335,17 +351,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tetris.py">
+    <entry file="file://$PROJECT_DIR$/qlearning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="98" column="16" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="26" column="71" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -356,20 +368,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qlearning.py">
+    <entry file="file://$PROJECT_DIR$/Tetris.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="631">
+          <caret line="98" column="16" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GreedyAgent.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        <state relative-caret-position="343">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

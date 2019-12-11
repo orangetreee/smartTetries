@@ -108,7 +108,7 @@ class TetrisApp(object):
         self.score += 1
 
     def init_game(self):
-        pygame.time.set_timer(pygame.USEREVENT+1, 400)
+        pygame.time.set_timer(pygame.USEREVENT+1, 100)
         self.board = newBoard()
         self.level = 1
         self.score = 0
