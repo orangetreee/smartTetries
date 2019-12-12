@@ -17,10 +17,8 @@ class Greedy(object):
         f3 = self.getHoles()
         f4 = self.bumpiness()
 
-        # score = 0.760666 * f0 - 0.510066 * f1 - 0.35663 * f3 - 0.184483 * f4
-        # score = f0 - f1 - f2 - f3 - f4
         score = f0 * 4 - f1 * 3 - f2 * 3 - f3 * 2 - f4
-        score = -0.520162 * f1 + 0.771727 * f0 - f2*0.000002 - 0.36483 * f3 - 0.183434 * f4
+        # score = -0.520162 * f1 + 0.771727 - 0.36483 * f3 - 0.183434 * f4
         return score
 
     def getHeights(self):

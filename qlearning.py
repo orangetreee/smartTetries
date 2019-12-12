@@ -4,8 +4,8 @@ import random as rand
 import math
 
 weights = [1, -1, -1, -1, -1]
-Epsilon = 0.1
-Alpha = 0.1
+Epsilon = 0.05
+Alpha = 0.075
 qVal = {}
 
 
@@ -24,9 +24,8 @@ class QLearning(object):
         f3 = self.getHoles()
         f4 = self.bumpiness()
 
-        # score = -0.520162*f1 + 0.771727*f0 - 0.36483*f3 - 0.183434*f4
-        score = weights[0]*f0 - weights[1]*f1 - weights[3]*f3 - weights[4]*f4
-        # print(score)
+        score = -0.520162*f1 + 0.771727*f0 - 0.36483*f3 - 0.183434*f4
+        # score = weights[0]*f0 - weights[1]*f1 - weights[3]*f3 - weights[4]*f4
         return score
 
     def getHeight(self):
@@ -119,7 +118,6 @@ class TetrisQL(TetrisApp):
                 self.rotateStone()
             self.move(bestAction[1] - self.stoneX)
             self.instantDrop()
-            print(weights)
 
 
 if __name__ == '__main__':
